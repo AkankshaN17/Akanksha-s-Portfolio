@@ -34,7 +34,8 @@ The website is designed with a clean **UI/UX, smooth animations,** and a **profe
 ## 📞 Contact Me
 
 - **💌 Email:** akankshadeshmukh383@gmail.com
-- **🔗 LinkedIn:** https://www.linkedin.com/in/akanksha-nikam-72a293244/
+- **🔗 LinkedIn:** [Akanksha Nikam](https://www.linkedin.com/in/akanksha-nikam-72a293244/)
+
 
 
 
