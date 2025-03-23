@@ -4,7 +4,7 @@ Welcome to my personal portfolio! This project is a **fully responsive** and **i
 <br><br>
 
 ## 🔗 Live Demo  
-👉 [View Portfolio]("https://akankshanikamportfolio.netlify.app")
+👉 [View Portfolio](https://akankshanikamportfolio.netlify.app)
 <br><br>
 
 ## 🌟 Overview
