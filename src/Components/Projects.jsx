@@ -16,8 +16,8 @@ const projectData = [
       { icon: faReact, color: '#61dafb', name: 'React' },
       { icon: SiTailwindcss, color: '#38b2ac', name: 'Tailwind CSS' },
     ],
-    code: null,
-    live: null,
+    code: 'https://github.com/AkankshaN17/Akanksha-s-Portfolio.git',
+    live: 'https://akankshanikamportfolio.netlify.app',
   },
   {
     id: 2,
