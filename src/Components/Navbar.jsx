@@ -7,10 +7,12 @@ const Navbar = ({ navOpen }) => {
   const activeBox = useRef();
 
   const initActiveBox = () => {
-    activeBox.current.style.top = lastActiveLink.current.offsetTop + 'px';
-    activeBox.current.style.left = lastActiveLink.current.offsetLeft + 'px';
-    activeBox.current.style.width = lastActiveLink.current.offsetWidth + 'px';
-    activeBox.current.style.height = lastActiveLink.current.offsetHeight + 'px';
+    if (lastActiveLink.current) {
+      activeBox.current.style.top = lastActiveLink.current.offsetTop + 'px';
+      activeBox.current.style.left = lastActiveLink.current.offsetLeft + 'px';
+      activeBox.current.style.width = lastActiveLink.current.offsetWidth + 'px';
+      activeBox.current.style.height = lastActiveLink.current.offsetHeight + 'px';
+    }
   };
 
   useEffect(() => {
@@ -25,11 +27,7 @@ const Navbar = ({ navOpen }) => {
     lastActiveLink.current?.classList.remove('active');
     event.target.closest('a').classList.add('active');
     lastActiveLink.current = event.target.closest('a');
-
-    activeBox.current.style.top = lastActiveLink.current.offsetTop + 'px';
-    activeBox.current.style.left = lastActiveLink.current.offsetLeft + 'px';
-    activeBox.current.style.width = lastActiveLink.current.offsetWidth + 'px';
-    activeBox.current.style.height = lastActiveLink.current.offsetHeight + 'px';
+    initActiveBox();
   };
 
   const navItems = [
@@ -42,7 +40,7 @@ const Navbar = ({ navOpen }) => {
 
   return (
     <motion.nav
-      className={'navbar ' + (navOpen ? 'active' : '') + ' font-inter'}
+      className={`navbar ${navOpen ? 'active' : ''} font-inter bg-[#1a1a1a]/80 backdrop-blur-md p-3 rounded-lg shadow-lg`}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -52,18 +50,18 @@ const Navbar = ({ navOpen }) => {
           href={link}
           key={key}
           ref={ref}
-          className={`${className} text-[#ff66b2] hover:text-white transition-colors duration-300`}
+          className={`${className} text-white hover:text-[#ff66b2] transition-all duration-300 px-4 py-2 rounded-lg`}
           onClick={activeCurrentLink}
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: key * 0.1 }}
         >
-          <span className="material-symbols-rounded">{icon}</span>
+          <span className="material-symbols-rounded mr-2">{icon}</span>
           {label}
         </motion.a>
       ))}
       <motion.div
-        className="active-box bg-[#ff66b2]"
+        className="active-box bg-[#ff66b2] rounded-lg opacity-80"
         ref={activeBox}
         layout
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
